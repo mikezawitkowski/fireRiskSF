@@ -122,7 +122,22 @@ OTHER_VARIABLE=something
 
 ### TODOs and TASKS
 
-    - PRIORITY: figure out the proper use of `$offset` for accurate pagination
-    - Even though the above may only look at type=fire, in reality the non-fire emergencies calls are an input for training. Those need to be added back in
-    - check how many times a code 2 turns into a code 3 as the final priority
-    - sign up for an app token: https://dev.socrata.com/foundry/data.sfgov.org/enhu-st7v
+~~figure out the proper use of offset for accurate pagination~~
+
+The method of using the cookiecutter template approach seems too heavy for getting started; too many dependencies to get to "hello world". We might as well use a docker container for the project, or maybe some sort of brew approach? Something to discuss with the group.
+
+A big problem with using the cookiecutter template is that some of the libraries don't play very nicely with common data science libraries like Pandas. They work OK, but the cookiecutter template is recommending a certain workflow that frankly Anaconda and Continuum already have solved. Need to reconcile this.
+
+The 0.3 EDA notebook has all the working pieces for doing a proper reverse lookup pipeline for filling in missing zipcode data and lat/lon data, but it's disorganized, inefficient, and needs to be refactored as a non-notebook script into `src` where an interim data file can be cached.
+
+Need to figure out how far back do we need to go in the dataset in order to have enough data to work with? There are about 400,000 rows of records; at what point is the past data so old that it doesn't improve the training model for making predictions?
+
+The job I was asked to do in the first place was to consolidate the address information in some way to allow for the fact that other data sources being incorporated are by address unit, but that's a few steps off from this.
+
+Need to investigate how brigadehub does their setup, maybe there's an idea or two there.
+
+Even though the above may only look at type=fire, in reality the non-fire emergencies calls are an input for training. Those need to be added back in at some point for training data.
+
+check how many times a code 2 turns into a code 3 as the final priority
+
+sign up for an app token: https://dev.socrata.com/foundry/data.sfgov.org/enhu-st7v
