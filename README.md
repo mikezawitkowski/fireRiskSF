@@ -3,6 +3,7 @@ fire_risk
 
 Predict San Francisco Fire Risks
 
+
 Project Organization
 ------------
 
@@ -20,8 +21,11 @@ Project Organization
     ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
     ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
+    │   |                     the creator's initials, and a short `-` delimited description, e.g.
+    │   |                     `1.0-jqp-initial-data-exploration`.
+    |   |
+    │   └── exploratory    <- Experimental, unrefined notebooks.
+    │   └── reports        <- Polished notebooks that export html to the reports directory.
     │
     ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
     │
@@ -49,3 +53,18 @@ Project Organization
     │       └── visualize.py
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
+
+
+## More README stuff
+
+This file structure was created programmatically using this cookiecutter:
+https://drivendata.github.io/cookiecutter-data-science/
+
+Please take a look at the link above, and use it to follow best practices, for instance naming conventions for Notebooks etc.
+
+
+### Changelog
+
+ - 7/11/2016
+    - adding the list of SFFD data from SF Open Data.gov website https://data.sfgov.org/resource/kikm-y2iv.json
+    - creating first exploratory data analysis notebook using the link above with pandas
