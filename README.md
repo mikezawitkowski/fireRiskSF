@@ -68,3 +68,11 @@ Please take a look at the link above, and use it to follow best practices, for i
  - 7/11/2016
     - adding the list of SFFD data from SF Open Data.gov website https://data.sfgov.org/resource/kikm-y2iv.json
     - creating first exploratory data analysis notebook using the link above with pandas
+    - updating the data.sfgov.org json url to only provide fire links. After reviewing the live explorer online, it seems to make sense to make the core data for instances of fire risk prevention failure be final_priority=3 ('Emergency') and call_type_group='Fire'
+
+
+### TODOs and TASKS
+
+    - TODO: even though the above may only look at type=fire, in reality the non-fire emergencies calls are an input for training. Those need to be added back in
+    - check how many times a code 2 turns into a code 3 as the final priority
+    - 
