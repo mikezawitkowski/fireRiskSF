@@ -69,24 +69,60 @@ Please take a look at the link above, and use it to follow best practices, for i
     - creating first exploratory data analysis notebook using the link above with pandas
     - updating the data.sfgov.org json url to only provide fire links. After reviewing the live explorer online, it seems to make sense to make the core data for instances of fire risk prevention failure be final_priority=3 ('Emergency') and call_type_group='Fire'
     - There's a problem with using $offset in trying to page through sfgov.org data via API that is a work in progress. See the `notebooks/exploratory` folder for more details
+  - 7/12/2016
+    - new notebook 0.2 for debugging and finally solving the $offset problem
+    - new notebook 0.3 for new initial exploration
+    - added credentials for accessing a geo lookup via geonames.or
 
 ### Requirements
 
  - Python2
  - Jupyter notebook
  - Pandas library
+ - For geolookup, create a free account with http://www.geonames.org/login
 
-### Installation instructions to reproduce the pipeline to date
+### Installation instructions
 
  - Clone this repo to your local machine
  - `cd notebooks` to get to the notebooks folder
  - run `jupyter notebook`
  - a browser window should appear, click on `exploratory`
  - click on the latest version of the notebook
- - go nuts
+ - In the root project directory, create a .env file and store your credentials
+    - For instance if you want to use the geonames.org data, add a config file with your username after registering for an account at www.geonames.org/login
+    - **NEVER commit the ``.env` file!**
+ - have fun!
+
+### About the .env file
+
+The `.env` file never goes into source control. It's where your secrets live, your personal credentials.
+
+Below is the header of the template `.env` file, so you can create your own personal one. It also includes instructions on how to import the variables into a python script
+
+```
+# Environment variables go here, can be read by `python-dotenv` package:
+#
+#   `src/script.py`
+#   ----------------------------------------------------------------
+#    import dotenv
+#
+#    project_dir = os.path.join(os.path.dirname(__file__), os.pardir)
+#    dotenv_path = os.path.join(project_dir, '.env')
+#    dotenv.load_dotenv(dotenv_path)
+#   ----------------------------------------------------------------
+#
+# DO NOT ADD THIS FILE TO VERSION CONTROL!
+#
+# example .env file
+DATABASE_URL=postgres://username:password@localhost:5432/dbname
+AWS_ACCESS_KEY=myaccesskey
+AWS_SECRET_ACCESS_KEY=mysecretkey
+OTHER_VARIABLE=something
+```
 
 ### TODOs and TASKS
 
-    - TODO: even though the above may only look at type=fire, in reality the non-fire emergencies calls are an input for training. Those need to be added back in
+    - PRIORITY: figure out the proper use of `$offset` for accurate pagination
+    - Even though the above may only look at type=fire, in reality the non-fire emergencies calls are an input for training. Those need to be added back in
     - check how many times a code 2 turns into a code 3 as the final priority
     - sign up for an app token: https://dev.socrata.com/foundry/data.sfgov.org/enhu-st7v
