@@ -59,6 +59,9 @@ target/
 # DotEnv configuration
 .env
 
+# json configuration
+config.json
+
 # Database
 *.db
 *.rdb
@@ -71,4 +74,3 @@ target/
 
 # exclude data from source control by default
 /data/
-
