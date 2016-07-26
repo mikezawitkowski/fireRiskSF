@@ -72,7 +72,10 @@ Please take a look at the link above, and use it to follow best practices, for i
   - 7/12/2016
     - new notebook 0.2 for debugging and finally solving the $offset problem
     - new notebook 0.3 for new initial exploration
-    - added credentials for accessing a geo lookup via geonames.or
+    - added credentials for accessing a geo lookup via geonames.org
+  - 7/26/2016
+    - Added new exploratory notebooks attempting seeking correlations with weather data
+    - Added a report from a fellow SFBrigade member 
 
 ### Requirements
 
