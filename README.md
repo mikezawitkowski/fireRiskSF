@@ -75,7 +75,10 @@ Please take a look at the link above, and use it to follow best practices, for i
     - added credentials for accessing a geo lookup via geonames.org
   - 7/26/2016
     - Added new exploratory notebooks attempting seeking correlations with weather data
-    - Added a report from a fellow SFBrigade member 
+    - Added a report from a fellow SFBrigade member
+  - 8/11/2016
+    - Create first report
+    - Add new data explorations
 
 ### Requirements
 
